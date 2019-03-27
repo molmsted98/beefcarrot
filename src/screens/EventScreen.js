@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Platform, StyleSheet, Text, View
 } from 'react-native';
+import GlobalStyles from '../constants/GlobalStyles';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\nCmd+D or shake for dev menu',
@@ -11,7 +12,7 @@ const instructions = Platform.select({
 export default class EventScreen extends Component {
   render() {
     return (
-        <View style={styles.container}>
+        <View style={GlobalStyles.container}>
           <Text style={styles.welcome}>Welcome to React Testing!</Text>
           <Text style={styles.instructions}>To get started, edit App.js</Text>
           <Text style={styles.instructions}>{instructions}</Text>
@@ -21,12 +22,6 @@ export default class EventScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
   welcome: {
     fontSize: 20,
     textAlign: 'center',

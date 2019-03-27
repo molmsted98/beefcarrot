@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import TabContainer from './TabContainer';
+import Navigation from './src/Navigation';
 
 export default class App extends Component {
   render() {
     return (
-        <TabContainer />
+        <Navigation />
     );
   }
 }
