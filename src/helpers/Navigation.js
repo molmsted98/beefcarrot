@@ -1,15 +1,26 @@
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { StackActions, NavigationActions, createAppContainer, createStackNavigator} from 'react-navigation';
 import TabContainer from '../containers/TabContainer'
+import LoginScreen from "../screens/LoginScreen";
 
-const Navigation = createAppContainer(
+export const Navigation = createAppContainer(
     createStackNavigator(
         {
-          Tabs: TabContainer,
+          Login: LoginScreen,
+          Tabs: TabContainer
         },
         {
-          initialRouteName: 'Tabs'
+          initialRouteName: 'Login'
         }
     )
 );
 
-export default Navigation;
+export const Action = {
+  Login: StackActions.reset({
+    index: 0,
+    actions: [
+      NavigationActions.navigate({
+        routeName: 'Tabs'
+      })
+    ]
+  })
+};
