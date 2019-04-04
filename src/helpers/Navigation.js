@@ -1,5 +1,5 @@
 import { createAppContainer, createStackNavigator } from 'react-navigation';
-import TabContainer from './containers/TabContainer'
+import TabContainer from '../containers/TabContainer'
 
 const Navigation = createAppContainer(
     createStackNavigator(
