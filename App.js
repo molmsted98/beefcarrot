@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navigation } from './src/helpers/Navigation';
+import { Navigation } from './src/navigation/Navigation';
 
 export default class App extends Component {
 	render() {

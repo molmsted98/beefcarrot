@@ -3,7 +3,7 @@ import {
 	Button, View, TouchableWithoutFeedback, Keyboard
 } from 'react-native';
 import { TextField } from 'react-native-materialui-textfield';
-import { Action } from '../helpers/Navigation';
+import { Action } from '../navigation/Navigation';
 
 export default class LoginScreen extends Component {
 	componentDidMount() {
@@ -31,6 +31,7 @@ export default class LoginScreen extends Component {
 	};
 
 	validateAndLogin = () => {
+		Keyboard.dismiss();
 		this.props.navigation.dispatch(Action.Login);
 	};
 

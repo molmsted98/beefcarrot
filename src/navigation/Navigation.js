@@ -1,5 +1,5 @@
 import { StackActions, NavigationActions, createAppContainer, createStackNavigator } from 'react-navigation';
-import TabContainer from '../containers/TabContainer'
+import TabContainer from './TabContainer'
 import LoginScreen from "../screens/LoginScreen";
 
 export const Navigation = createAppContainer(
