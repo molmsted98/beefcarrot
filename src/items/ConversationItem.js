@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react';
 import {
 	Text, TouchableNativeFeedback, View
 } from 'react-native';
+import { Screens, navigate } from "../helpers/Navigation";
 
 export default class ConversationItem extends PureComponent {
-
 	onPress = () => {
-		console.log(this.props.id)
+		navigate(Screens.Conversation)
 	};
 
 	render() {

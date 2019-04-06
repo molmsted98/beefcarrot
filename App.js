@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
-import { Navigation } from './src/navigation/Navigation';
+import { AppContainer, setNavigator } from './src/helpers/Navigation';
 
 export default class App extends Component {
+	componentDidMount() {
+		setNavigator(this.navigator);
+	}
+
 	render() {
 		return (
-			<Navigation />
+			<AppContainer
+				ref={(nav) => {
+					this.navigator = nav;
+				}}
+			/>
 		);
 	}
 }
