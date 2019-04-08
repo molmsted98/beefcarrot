@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
 import ChatItem from '../items/ChatItem';
 
 export default class ChatList extends PureComponent {
@@ -15,6 +15,7 @@ export default class ChatList extends PureComponent {
 	render() {
 		return (
 			<FlatList
+				style={styles.container}
 				data={this.props.data}
 				extraData={this.state}
 				keyExtractor={this.keyExtractor}
@@ -23,3 +24,10 @@ export default class ChatList extends PureComponent {
 		);
 	}
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		flexDirection: "column"
+	}
+});
