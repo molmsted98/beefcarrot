@@ -1,9 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import {
-	View
-} from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import ConversationList from '../containers/ConversationList';
 import { Conversation, conversationList } from '../models/Conversation';
@@ -24,7 +22,6 @@ class ConversationListScreen extends Component<Props> {
 
 const mapStateToProps = (state) => {
 	const conversations = conversationList(state);
-	console.log(conversations);
 	return {
 		conversations
 	}

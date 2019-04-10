@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {
-	StyleSheet, TextInput, View
-} from 'react-native';
+import { StyleSheet, TextInput, View } from 'react-native';
 import { IconButton } from 'react-native-paper';
 
 export default class ChatInput extends Component {

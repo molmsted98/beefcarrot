@@ -2,7 +2,6 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import EventListScreen from '../screens/EventListScreen';
-import GroupsScreen from '../screens/GroupsScreen';
 import ConversationListScreen from "../screens/ConversationListScreen";
 
 const TabContainer = createBottomTabNavigator({
@@ -12,15 +11,6 @@ const TabContainer = createBottomTabNavigator({
 			tabBarLabel: 'Events',
 			tabBarIcon: ({ tintColor }) => (
 				<Icon name="calendar" size={30} color={tintColor} />
-			)
-		}
-	},
-	Groups: {
-		screen: GroupsScreen,
-		navigationOptions: {
-			tabBarLabel: 'Groups',
-			tabBarIcon: ({ tintColor }) => (
-				<Icon name="group" size={30} color={tintColor} />
 			)
 		}
 	},

@@ -1,13 +1,11 @@
 // @flow
 import React, { PureComponent } from 'react';
-import {
-	Text, TouchableNativeFeedback, View
-} from 'react-native';
+import { Text, TouchableNativeFeedback, View } from 'react-native';
 import { Screens, navigate } from "../helpers/Navigation";
 
 type Props = {
-	id: string,
-	title: string
+	id: String,
+	title: String
 };
 
 export default class ConversationItem extends PureComponent<Props> {

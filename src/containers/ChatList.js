@@ -2,7 +2,7 @@
 
 import React, { PureComponent } from 'react';
 import { FlatList, StyleSheet } from 'react-native';
-import ChatItem from '../items/ChatItem';
+import ChatItem from '../components/ChatItem';
 import { Message } from '../models/Conversation';
 
 type Props = {
