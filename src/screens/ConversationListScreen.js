@@ -1,20 +1,33 @@
+// @flow
+
 import React, { Component } from 'react';
 import {
 	View
 } from 'react-native';
+import { connect } from 'react-redux';
 import ConversationList from '../containers/ConversationList';
+import { Conversation, conversationList } from '../models/Conversation';
 
-export default class ConversationListScreen extends Component {
-	conversationMockData = [
-		{ id: "1", title: "Test" },
-		{ id: "2", title: "Test2" }
-	];
+type Props = {
+	conversations: [Conversation]
+}
 
+class ConversationListScreen extends Component<Props> {
 	render() {
 		return (
 			<View>
-				<ConversationList data={this.conversationMockData} />
+				<ConversationList data={this.props.conversations} />
 			</View>
 		);
 	}
 }
+
+const mapStateToProps = (state) => {
+	const conversations = conversationList(state);
+	console.log(conversations);
+	return {
+		conversations
+	}
+};
+
+export default connect(mapStateToProps)(ConversationListScreen);

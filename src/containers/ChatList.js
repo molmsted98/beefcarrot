@@ -1,14 +1,21 @@
+// @flow
+
 import React, { PureComponent } from 'react';
 import { FlatList, StyleSheet } from 'react-native';
 import ChatItem from '../items/ChatItem';
+import { Message } from '../models/Conversation';
 
-export default class ChatList extends PureComponent {
+type Props = {
+	data: [Message]
+}
+
+export default class ChatList extends PureComponent<Props> {
 	keyExtractor = (item) => item.id;
 
 	renderItem = ({ item }) => (
 		<ChatItem
 			id={item.id}
-			title={item.title}
+			title={item.text}
 		/>
 	);
 
