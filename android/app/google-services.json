@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "585776784278",
+    "firebase_url": "https://beefca4407.firebaseio.com",
+    "project_id": "beefca4407",
+    "storage_bucket": "beefca4407.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585776784278:android:4745e4dec0f7d0c6",
+        "android_client_info": {
+          "package_name": "com.tsuruta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585776784278-qurvgkjh2j378lqaqs146g2jd5eg114e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFHsI8_YN1Gc4BrbX8YYr4GGk-PfZ4TDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585776784278-qurvgkjh2j378lqaqs146g2jd5eg114e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
