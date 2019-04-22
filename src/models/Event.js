@@ -7,6 +7,10 @@ export type Event = {
 	location: String
 }
 
+export const featuredEvent = (state) => {
+	return Object.values(state.eventModel.featuredEvent);
+}
+
 export const eventList = (state) => {
 	return Object.values(state.eventModel.events);
 };

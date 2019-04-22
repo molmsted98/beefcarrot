@@ -7,7 +7,8 @@ type Props = {
 	id: String,
 	title: String,
 	date: Date,
-	location: String
+	location: String,
+	people: [String]
 }
 
 export default class EventItem extends PureComponent<Props> {
@@ -16,13 +17,15 @@ export default class EventItem extends PureComponent<Props> {
 	};
 
 	render() {
+		const peopleText = `Going: ${this.props.people.join(", ")}`;
+
 		return (
 			<TouchableNativeFeedback style={styles.highlight} onPress={() => this.onPress(this.props.id)}>
 				<View style={styles.item}>
 					<Text style={[GlobalStyles.header, { marginBottom: 8 }]}>{this.props.title}</Text>
 					<Text style={GlobalStyles.subHeader}>{this.props.location}</Text>
 					<Text style={[GlobalStyles.subHeader, { marginTop: 4, marginBottom: 16 }]}>{this.props.date}</Text>
-					<Text style={GlobalStyles.body}>Going: Molly Chandoughnut</Text>
+					<Text style={GlobalStyles.body}>{peopleText}</Text>
 				</View>
 			</TouchableNativeFeedback>
 		)

@@ -9,7 +9,9 @@ export const ADD_CONVERSATION = 'conversations/ADD_CONVERSATION';
 const mockConversations = {
 	"test": {
 		id: "test",
-		title: "Test Conversation",
+		title: "Alex Johnson, Bill Smith, Alice Goodman",
+		location: "Rick's American Cafe",
+		date: Date(),
 		messages: [
 			{ id: "1", text: "Message1", creatorId: "1" },
 			{ id: "2", text: "Message2", creatorId: "1" },
@@ -23,7 +25,9 @@ const mockConversations = {
 	},
 	"test2": {
 		id: "test2",
-		title: "Test Conversation 2",
+		title: "Bob Sloan, Derek Peters, Brian Mason",
+		location: "Pinball Petes",
+		date: Date(),
 		messages: [
 			{ id: "1", text: "Message1", creatorId: "1" },
 			{ id: "2", text: "Message2", creatorId: "1" },

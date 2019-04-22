@@ -24,6 +24,7 @@ export default class EventList extends PureComponent<Props> {
 			title={item.title}
 			date={formattedDate(item.date)}
 			location={item.location}
+			people={item.people}
 		/>
 	);
 

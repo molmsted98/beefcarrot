@@ -4,12 +4,13 @@ import { ScrollView, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import EventList from "../containers/EventList";
 import type { Event } from "../models/Event";
-import { eventList } from "../models/Event";
+import { featuredEvent, eventList } from "../models/Event";
 import Colors from '../constants/Colors';
 import GlobalStyles from '../constants/GlobalStyles';
 import Divider from '../components/Divider';
 
 type Props = {
+	featuredEvent: Event,
 	events: [Event]
 }
 
@@ -21,7 +22,7 @@ class EventListScreen extends Component<Props> {
 			<ScrollView style={styles.container}>
 				<Text style={[GlobalStyles.header, { marginTop: 24, marginLeft: 16, marginBottom: 2 }]}>Featured Event:</Text>
 				{divider}
-				<EventList data={this.props.events} />
+				<EventList data={this.props.featuredEvent} />
 				<Text style={[GlobalStyles.header, { marginTop: 24, marginLeft: 16, marginBottom: 2 }]}>Today:</Text>
 				{divider}
 				<EventList data={this.props.events} />
@@ -34,8 +35,10 @@ class EventListScreen extends Component<Props> {
 }
 
 const mapStateToProps = (state) => {
+	const featured = featuredEvent(state);
 	const events = eventList(state);
 	return {
+		featuredEvent: featured,
 		events
 	}
 };

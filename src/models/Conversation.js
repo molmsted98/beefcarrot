@@ -3,6 +3,8 @@
 export type Conversation = {
 	id: String,
 	title: String,
+	location: String,
+	date: Date,
 	messages: [Message]
 }
 
