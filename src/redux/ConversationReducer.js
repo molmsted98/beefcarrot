@@ -4,6 +4,8 @@ export const FETCH_CONVERSATIONS = {
 	FAILURE: "conversations/FETCH_CONVERSATIONS_FAILURE"
 };
 
+export const ADD_CONVERSATION = 'conversations/ADD_CONVERSATION';
+
 const mockConversations = {
 	"test": {
 		id: "test",
@@ -46,7 +48,15 @@ export default function conversationReducer(state = defaultState, action) {
 				loading: false,
 				error: 'Error while fetching repositories'
 			};
+		case ADD_CONVERSATION: {
+			return addConversations(action.conversation);
+		}
+
 		default:
 			return state;
 	}
+}
+
+function addConversations(conversation) {
+
 }

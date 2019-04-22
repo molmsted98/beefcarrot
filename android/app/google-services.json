@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:585776784278:android:4745e4dec0f7d0c6",
+        "mobilesdk_app_id": "1:585776784278:android:4c65ca151952dcdc",
         "android_client_info": {
-          "package_name": "com.tsuruta"
+          "package_name": "com.meetup"
         }
       },
       "oauth_client": [

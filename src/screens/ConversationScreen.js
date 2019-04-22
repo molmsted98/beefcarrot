@@ -4,10 +4,10 @@ import { StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
 import ChatList from '../containers/ChatList';
 import ChatInput from '../components/ChatInput';
+
 import { Conversation, conversationForId } from '../models/Conversation';
 
 type Props = {
-	conversationId: String,
 	conversation: Conversation
 }
 
