@@ -8,7 +8,6 @@ const TabContainer = createBottomTabNavigator({
 	Events: {
 		screen: EventListScreen,
 		navigationOptions: {
-			tabBarLabel: 'Events',
 			tabBarIcon: ({ tintColor }) => (
 				<Icon name="calendar" size={30} color={tintColor} />
 			)
@@ -17,16 +16,24 @@ const TabContainer = createBottomTabNavigator({
 	Conversations: {
 		screen: ConversationListScreen,
 		navigationOptions: {
-			tabBarLabel: 'Conversations',
 			tabBarIcon: ({ tintColor }) => (
 				<Icon name="chat" size={30} color={tintColor} />
+			)
+		}
+	},
+	Settings: {
+		screen: ConversationListScreen,
+		navigationOptions: {
+			tabBarIcon: ({ tintColor }) => (
+				<Icon name="settings" size={30} color={tintColor} />
 			)
 		}
 	}
 }, {
 	tabBarOptions: {
 		activeTintColor: 'blue',
-		inactiveTintColor: 'gray'
+		inactiveTintColor: 'gray',
+		showLabel: false
 	}
 });
 

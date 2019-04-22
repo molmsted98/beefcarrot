@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
 	listDivider: {
 		height: 1,
 		backgroundColor: Colors.divider,
-		marginLeft: 24,
-		marginRight: 24
+		marginLeft: 16,
+		marginRight: 16
 	}
 });

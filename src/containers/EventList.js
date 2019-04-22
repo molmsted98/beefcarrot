@@ -4,7 +4,6 @@ import React, { PureComponent } from 'react';
 import { FlatList } from 'react-native';
 import moment from 'moment';
 import EventItem from '../components/EventItem';
-import Divider from '../components/Divider';
 import { Event } from '../models/Event';
 
 type Props = {
@@ -12,9 +11,7 @@ type Props = {
 }
 
 const formattedDate = (date) => {
-	const day = moment(date).format('MM/DD/YY');
-	const time = moment(date).format('hh:mm A');
-	return `${day} at ${time}`;
+	return moment(date).format('hh:mm A');
 };
 
 export default class EventList extends PureComponent<Props> {
@@ -37,7 +34,6 @@ export default class EventList extends PureComponent<Props> {
 				extraData={this.state}
 				keyExtractor={this.keyExtractor}
 				renderItem={this.renderItem}
-				ItemSeparatorComponent={Divider.list}
 			/>
 		);
 	}

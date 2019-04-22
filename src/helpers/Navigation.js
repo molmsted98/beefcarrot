@@ -3,6 +3,7 @@ import CardStackStyleInterpolator from 'react-navigation-stack/dist/views/StackV
 import TabContainer from '../containers/TabContainer'
 import LoginScreen from "../screens/LoginScreen";
 import ConversationScreen from "../screens/ConversationScreen";
+import Colors from '../constants/Colors';
 
 const config = {};
 
@@ -15,12 +16,26 @@ export const Screens = {
 export const AppContainer = createAppContainer(
 	createStackNavigator(
 		{
-			Login: LoginScreen,
-			Tabs: TabContainer,
+			Login: {
+				screen: LoginScreen,
+			},
+			Tabs: {
+				screen: TabContainer,
+				navigationOptions: {
+					title: "Make Plans",
+					headerStyle: {
+						backgroundColor: Colors.colorPrimary
+					},
+					headerTitleStyle: {
+						color: 'white',
+					},
+				}
+			},
 			Conversation: ConversationScreen
 		},
 		{
 			initialRouteName: 'Login',
+			headerMode: 'screen',
 			transitionConfig: () => ({
 				screenInterpolator: (props) => {
 					const { scene } = props;

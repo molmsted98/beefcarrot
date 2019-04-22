@@ -1,6 +1,6 @@
 // @flow
 import React, { PureComponent } from 'react';
-import { Text, TouchableNativeFeedback, View } from 'react-native';
+import { Text, TouchableNativeFeedback, View, StyleSheet } from 'react-native';
 import { Screens, navigate } from "../helpers/Navigation";
 
 type Props = {
@@ -16,10 +16,18 @@ export default class ConversationItem extends PureComponent<Props> {
 	render() {
 		return (
 			<TouchableNativeFeedback onPress={() => this.onPress(this.props.id)}>
-				<View style={{ padding: 24, alignContent: "center" }}>
+				<View style={styles.item}>
 					<Text>{this.props.title}</Text>
 				</View>
 			</TouchableNativeFeedback>
 		)
 	}
 }
+
+const styles = StyleSheet.create({
+	item: {
+		padding: 24,
+		alignContent: "center",
+		backgroundColor: "white"
+	}
+});

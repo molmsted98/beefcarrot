@@ -7,6 +7,23 @@ const GlobalStyles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: Colors.screen
+	},
+	header: {
+		color: Colors.titleColor,
+		fontSize: 20
+	},
+	subHeader: {
+		color: Colors.titleColor,
+		fontSize: 14,
+		fontWeight: "500"
+	},
+	title: {
+		color: Colors.titleColor,
+		fontSize: 16
+	},
+	body: {
+		color: Colors.body,
+		fontSize: 14
 	}
 });
 
