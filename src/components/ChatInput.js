@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
+import { connect } from 'react-redux';
 import { IconButton } from 'react-native-paper';
 import Colors from '../constants/Colors';
+import { addMessage } from "../redux/ConversationReducer";
 
-export default class ChatInput extends Component {
+class ChatInput extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,7 +14,16 @@ export default class ChatInput extends Component {
 	}
 
 	sendMessage = (text) => {
-		console.log(text)
+		const message = {
+			id: "newId",
+			text,
+			sender: "",
+			date: Date()
+		};
+
+		this.props.addMessage(message);
+		this.textInput.clear();
+		this.textInput.blur();
 	};
 
 	render() {
@@ -24,6 +35,7 @@ export default class ChatInput extends Component {
 						placeholder="Send a message..."
 						onChangeText={(text) => this.setState({ text })}
 						value={this.state.text}
+						ref={input => this.textInput = input}
 					/>
 				</View>
 				<IconButton
@@ -36,6 +48,16 @@ export default class ChatInput extends Component {
 		);
 	}
 }
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		addMessage: (message) => {
+			dispatch(addMessage(message))
+		}
+	}
+};
+
+export default connect(null, mapDispatchToProps)(ChatInput);
 
 const styles = StyleSheet.create({
 	container: {

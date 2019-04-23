@@ -4,7 +4,14 @@ export const FETCH_CONVERSATIONS = {
 	FAILURE: "conversations/FETCH_CONVERSATIONS_FAILURE"
 };
 
-export const ADD_CONVERSATION = 'conversations/ADD_CONVERSATION';
+export const ADD_MESSAGE = 'conversations/ADD_CONVERSATION';
+
+export function addMessage(message) {
+	return {
+		type: ADD_MESSAGE,
+		message
+	}
+}
 
 const mockConversations = {
 	"test": {
@@ -52,15 +59,22 @@ export default function conversationReducer(state = defaultState, action) {
 				loading: false,
 				error: 'Error while fetching repositories'
 			};
-		case ADD_CONVERSATION: {
-			return addConversations(action.conversation);
+		case ADD_MESSAGE: {
+			const id = "test2";
+			const updatedConversation = state.conversations[id];
+			const newMessage = action.message;
+
+			updatedConversation.messages.push(newMessage);
+			const newConversations = state.conversations;
+			newConversations[id] = updatedConversation;
+
+			return {
+				...state,
+				conversations: newConversations
+			}
 		}
 
 		default:
 			return state;
 	}
-}
-
-function addConversations(conversation) {
-
 }

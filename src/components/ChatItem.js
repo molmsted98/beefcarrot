@@ -11,11 +11,18 @@ type Props = {
 
 export default class ChatItem extends PureComponent<Props> {
 	render() {
+		let userStyle = null;
+		let textStyle = null;
+		if (this.props.sender === '') {
+			userStyle = styles.messageSelf;
+			textStyle = styles.textSelf;
+		}
+
 		return (
 			<View>
 				<Text style={[GlobalStyles.body, styles.sender]}>{this.props.sender}</Text>
-				<View style={styles.message}>
-					<Text>{this.props.text}</Text>
+				<View style={[styles.message, userStyle]}>
+					<Text style={textStyle}>{this.props.text}</Text>
 				</View>
 			</View>
 		)
@@ -37,5 +44,12 @@ const styles = StyleSheet.create({
 		marginLeft: 16,
 		marginRight: 16,
 		borderRadius: 4
+	},
+	messageSelf: {
+		alignSelf: "flex-end",
+		borderColor: Colors.colorLight
+	},
+	textSelf: {
+		color: Colors.colorPrimary
 	}
 });
