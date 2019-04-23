@@ -26,12 +26,12 @@ const mockConversations = {
 	"test2": {
 		id: "test2",
 		title: "Bob Sloan, Derek Peters, Brian Mason",
-		location: "Pinball Petes",
+		location: "Pinball Pete's",
 		date: Date(),
 		messages: [
-			{ id: "1", text: "Message1", creatorId: "1" },
-			{ id: "2", text: "Message2", creatorId: "1" },
-			{ id: "3", text: "Message1", creatorId: "1" }
+			{ id: "1", text: "Hey guys, want to do something tonight?", sender: "Bob Sloan" },
+			{ id: "2", text: "Want to do Pinball Pete's?", sender: "Derek Peters" },
+			{ id: "3", text: "Yeah, I want to play some Galaga.", sender: "Brian Mason" }
 		]
 	}
 };

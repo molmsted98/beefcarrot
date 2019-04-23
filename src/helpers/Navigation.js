@@ -22,7 +22,7 @@ export const AppContainer = createAppContainer(
 			Tabs: {
 				screen: TabContainer,
 				navigationOptions: {
-					title: "Make Plans",
+					title: "Meet^",
 					headerStyle: {
 						backgroundColor: Colors.colorPrimary
 					},
@@ -31,10 +31,22 @@ export const AppContainer = createAppContainer(
 					},
 				}
 			},
-			Conversation: ConversationScreen
+			Conversation: {
+				screen: ConversationScreen,
+				navigationOptions: {
+					title: "Bob, Derek, Brian",
+					headerStyle: {
+						backgroundColor: Colors.colorPrimary
+					},
+					headerTitleStyle: {
+						color: 'white',
+					},
+					headerTintColor: 'white'
+				}
+			},
 		},
 		{
-			initialRouteName: 'Login',
+			initialRouteName: 'Tabs',
 			headerMode: 'screen',
 			transitionConfig: () => ({
 				screenInterpolator: (props) => {

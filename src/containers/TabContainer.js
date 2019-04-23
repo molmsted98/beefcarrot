@@ -3,13 +3,14 @@ import { createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import EventListScreen from '../screens/EventListScreen';
 import ConversationListScreen from "../screens/ConversationListScreen";
+import Colors from '../constants/Colors';
 
 const TabContainer = createBottomTabNavigator({
 	Events: {
 		screen: EventListScreen,
 		navigationOptions: {
 			tabBarIcon: ({ tintColor }) => (
-				<Icon name="calendar" size={30} color={tintColor} />
+				<Icon name="calendar" size={24} color={tintColor} />
 			)
 		}
 	},
@@ -17,7 +18,7 @@ const TabContainer = createBottomTabNavigator({
 		screen: ConversationListScreen,
 		navigationOptions: {
 			tabBarIcon: ({ tintColor }) => (
-				<Icon name="chat" size={30} color={tintColor} />
+				<Icon name="chat" size={24} color={tintColor} />
 			)
 		}
 	},
@@ -25,14 +26,14 @@ const TabContainer = createBottomTabNavigator({
 		screen: ConversationListScreen,
 		navigationOptions: {
 			tabBarIcon: ({ tintColor }) => (
-				<Icon name="settings" size={30} color={tintColor} />
+				<Icon name="settings" size={24} color={tintColor} />
 			)
 		}
 	}
 }, {
 	tabBarOptions: {
-		activeTintColor: 'blue',
-		inactiveTintColor: 'gray',
+		activeTintColor: Colors.colorLight,
+		inactiveTintColor: Colors.bodyColor,
 		showLabel: false
 	}
 });

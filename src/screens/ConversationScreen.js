@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { connect } from 'react-redux';
+import PlanHeader from '../components/PlanHeader';
 import ChatList from '../containers/ChatList';
 import ChatInput from '../components/ChatInput';
 
@@ -15,6 +16,7 @@ class ConversationScreen extends Component<Props> {
 	render() {
 		return (
 			<View style={styles.container}>
+				<PlanHeader location={this.props.conversation.location} date={this.props.conversation.date} />
 				<ChatList data={this.props.conversation.messages} />
 				<ChatInput />
 			</View>

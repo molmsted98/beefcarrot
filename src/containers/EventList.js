@@ -11,7 +11,7 @@ type Props = {
 }
 
 const formattedDate = (date) => {
-	return moment(date).format('hh:mm A');
+	return moment(date).format('h:mm A');
 };
 
 export default class EventList extends PureComponent<Props> {

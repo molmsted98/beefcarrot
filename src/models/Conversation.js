@@ -11,7 +11,7 @@ export type Conversation = {
 export type Message = {
 	id: String,
 	text: String,
-	creatorId: String,
+	sender: String,
 	createdAt: Date
 }
 

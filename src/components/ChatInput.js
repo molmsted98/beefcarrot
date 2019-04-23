@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, TextInput, View } from 'react-native';
 import { IconButton } from 'react-native-paper';
+import Colors from '../constants/Colors';
 
 export default class ChatInput extends Component {
 	constructor(props) {
@@ -17,15 +18,17 @@ export default class ChatInput extends Component {
 	render() {
 		return (
 			<View style={styles.container}>
-				<TextInput
-					style={styles.textInput}
-					placeholder="Send a message..."
-					onChangeText={(text) => this.setState({ text })}
-					value={this.state.text}
-				/>
+				<View style={styles.textWrapper}>
+					<TextInput
+						style={styles.textInput}
+						placeholder="Send a message..."
+						onChangeText={(text) => this.setState({ text })}
+						value={this.state.text}
+					/>
+				</View>
 				<IconButton
 					icon="send"
-					color="blue"
+					color={Colors.colorPrimary}
 					size={20}
 					onPress={() => this.sendMessage(this.state.text)}
 				/>
@@ -38,19 +41,24 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: "row",
 		width: "100%",
-		paddingLeft: 24,
-		paddingRight: 24,
+		paddingLeft: 20,
+		paddingRight: 28,
 		paddingTop: 12,
 		paddingBottom: 12,
-		borderColor: "gray",
-		justifyContent: "center",
-		borderWidth: 1
+		borderColor: Colors.border,
+		alignItems: "center",
+		elevation: 8,
+		backgroundColor: "white"
+	},
+	textWrapper: {
+		borderColor: Colors.divider,
+		borderWidth: 1,
+		borderRadius: 8,
+		width: "90%",
+		height: 40,
+		marginEnd: 8
 	},
 	textInput: {
-		height: 40,
-		width: "90%",
-		borderColor: "gray",
-		borderWidth: 1,
-		marginEnd: 8
+		marginHorizontal: 8
 	}
 });

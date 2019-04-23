@@ -15,7 +15,8 @@ export default class ChatList extends PureComponent<Props> {
 	renderItem = ({ item }) => (
 		<ChatItem
 			id={item.id}
-			title={item.text}
+			text={item.text}
+			sender={item.sender}
 		/>
 	);
 
